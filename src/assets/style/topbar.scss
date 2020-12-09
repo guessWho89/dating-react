@@ -1,0 +1,142 @@
+#topbar {
+    background: #eee;
+    padding: 10px;
+    position: fixed;
+    left: 60px;
+    top: 0px;
+    width: calc(100% - 60px);
+    z-index: 2;
+    display: flex;
+
+    >div {
+        padding: 10px;
+
+        .filterName {
+            font-weight: bold;
+            font-size: 18px;
+            color: #999;
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    .onlineStatus {
+        text-align: center;
+    }
+
+    .ageFilter {
+        .ageRange {
+            p {
+                cursor: pointer;
+                font-size: 14px;
+                color: #999;
+            }
+        }
+
+        text-align: center;
+    }
+
+    .interesStatus {
+        text-align: center;
+    }
+
+    .searchBar {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            width: 200px;
+            margin: auto 10px;
+        }
+    }
+
+    .topBarBottom {
+        background: #ddd;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%);
+        padding: 0;
+
+        .wrap {
+            max-width: 1000px;
+            margin: auto;
+
+            .changeRange {
+                padding: 20px;
+                display: none;
+
+                #slider {
+                    margin: 20px auto;
+                    height: 5px;
+
+                    .noUi-handle {
+                        height: 15px;
+                        width: 15px;
+                        border-radius: 50%;
+                        right: 0;
+                        transform: translateX(50%);
+                        outline: none;
+                        cursor: pointer;
+                        background: #eee;
+
+                        &::after {
+                            display: none;
+                        }
+
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+
+                .searchAgeRange {
+                    margin: 20px auto;
+                    text-align: center;
+                }
+            }
+
+            .interests {
+                display: none;
+                padding: 20px;
+                text-align: center;
+
+                .tags {
+                    .interesTag {
+                        padding: 5px 10px;
+                        border-radius: 10px;
+                        border: 1px solid #ccc;
+                        background: #fff;
+                        color: #999;
+                        cursor: pointer;
+                        display: inline-flex;
+                        margin: 5px;
+                    }
+                }
+
+                .buttons {
+                    margin: 20px auto;
+
+                    .decline {
+                        background: transparent;
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #topbar {
+        left: 0;
+        top: 60px;
+        width: 100%;
+        transition: 0.3s;
+        flex-direction: column;
+        transform: translateY(-100%);
+        border-bottom: 1px solid #ccc;
+    }
+}

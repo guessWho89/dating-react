@@ -1,0 +1,156 @@
+#topbar {
+  background: #eee;
+  padding: 10px;
+  position: fixed;
+  left: 60px;
+  top: 0px;
+  width: calc(100% - 60px);
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#topbar > div {
+  padding: 10px;
+}
+
+#topbar > div .filterName {
+  font-weight: bold;
+  font-size: 18px;
+  color: #999;
+  display: block;
+  margin-bottom: 10px;
+}
+
+#topbar .onlineStatus {
+  text-align: center;
+}
+
+#topbar .ageFilter {
+  text-align: center;
+}
+
+#topbar .ageFilter .ageRange p {
+  cursor: pointer;
+  font-size: 14px;
+  color: #999;
+}
+
+#topbar .interesStatus {
+  text-align: center;
+}
+
+#topbar .searchBar {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#topbar .searchBar input {
+  width: 200px;
+  margin: auto 10px;
+}
+
+#topbar .topBarBottom {
+  background: #ddd;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  padding: 0;
+}
+
+#topbar .topBarBottom .wrap {
+  max-width: 1000px;
+  margin: auto;
+}
+
+#topbar .topBarBottom .wrap .changeRange {
+  padding: 20px;
+  display: none;
+}
+
+#topbar .topBarBottom .wrap .changeRange #slider {
+  margin: 20px auto;
+  height: 5px;
+}
+
+#topbar .topBarBottom .wrap .changeRange #slider .noUi-handle {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  right: 0;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  outline: none;
+  cursor: pointer;
+  background: #eee;
+}
+
+#topbar .topBarBottom .wrap .changeRange #slider .noUi-handle::after {
+  display: none;
+}
+
+#topbar .topBarBottom .wrap .changeRange #slider .noUi-handle::before {
+  display: none;
+}
+
+#topbar .topBarBottom .wrap .changeRange .searchAgeRange {
+  margin: 20px auto;
+  text-align: center;
+}
+
+#topbar .topBarBottom .wrap .interests {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+#topbar .topBarBottom .wrap .interests .tags .interesTag {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #999;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 5px;
+}
+
+#topbar .topBarBottom .wrap .interests .buttons {
+  margin: 20px auto;
+}
+
+#topbar .topBarBottom .wrap .interests .buttons .decline {
+  background: transparent;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  #topbar {
+    left: 0;
+    top: 60px;
+    width: 100%;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    border-bottom: 1px solid #ccc;
+  }
+}
+/*# sourceMappingURL=topbar.css.map */

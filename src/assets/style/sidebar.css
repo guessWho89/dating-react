@@ -1,0 +1,81 @@
+#sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #eee;
+  border: 1px solid #ccc;
+  width: 60px;
+  z-index: 3;
+}
+
+#sidebar a {
+  text-decoration: none;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  border-bottom: 1px solid #ccc;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+}
+
+#sidebar a:hover {
+  background: #fff;
+}
+
+#sidebar a i {
+  font-size: 32px;
+  color: #555;
+}
+
+#sidebar a .description {
+  position: absolute;
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  left: 70px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0.3s, opacity 0.3s ease-in-out;
+  transition: visibility 0.3s, opacity 0.3s ease-in-out;
+}
+
+#sidebar a .description::before {
+  content: '';
+  background: #333;
+  padding: 5px;
+  position: absolute;
+  left: -5px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#sidebar a:hover > .description {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    left: -60px;
+  }
+}
+/*# sourceMappingURL=sidebar.css.map */

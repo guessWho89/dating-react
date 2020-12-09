@@ -1,0 +1,30 @@
+#mob_topbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #mob_topbar {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 10px;
+    background: #eee;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  #mob_topbar .burger,
+  #mob_topbar .more {
+    font-size: 40px;
+    color: #555;
+  }
+}
+/*# sourceMappingURL=mob_topbar.css.map */
