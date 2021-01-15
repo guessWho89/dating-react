@@ -1,9 +1,9 @@
-#mob_topbar {
+#mobBar {
   display: none;
 }
 
 @media (max-width: 768px) {
-  #mob_topbar {
+  #mobBar {
     position: fixed;
     width: 100%;
     height: 60px;
@@ -21,10 +21,10 @@
     -webkit-transition: 0.3s;
     transition: 0.3s;
   }
-  #mob_topbar .burger,
-  #mob_topbar .more {
+  #mobBar .burger,
+  #mobBar .more {
     font-size: 40px;
     color: #555;
   }
 }
-/*# sourceMappingURL=mob_topbar.css.map */
+/*# sourceMappingURL=mobBar.css.map */

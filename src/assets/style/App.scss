@@ -1,9 +1,15 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Regular.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
     font-display: swap;
+    outline: none;
 }
 
 * small {
@@ -46,15 +52,15 @@ body {
         height: 100%;
         overflow-y: auto;
         transition: 0.3s;
-    }    
+    }
 }
 
 
-// @import 'pages/messages.scss';
+@import 'messages.scss';
 
-// @import 'components/loader';
-// @import 'components/mob_topbar';
-// @import 'topbar';
+@import 'loader';
+@import 'mobBar';
+@import 'topbar';
 @import 'sidebar';
 @import 'profiles';
-// @import 'components/footer';
+@import 'footer';

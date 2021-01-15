@@ -9,6 +9,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#topbar .MuiButton-root {
+  padding: 8px 16px;
+  margin: auto 5px;
 }
 
 #topbar > div {
@@ -39,6 +47,16 @@
 
 #topbar .interesStatus {
   text-align: center;
+}
+
+#topbar .interesStatus .showInterests,
+#topbar .interesStatus .hideInterests {
+  color: #999;
+  cursor: pointer;
+}
+
+#topbar .interesStatus .hideInterests {
+  display: none;
 }
 
 #topbar .searchBar {
@@ -79,34 +97,16 @@
   display: none;
 }
 
-#topbar .topBarBottom .wrap .changeRange #slider {
+#topbar .topBarBottom .wrap .changeRange .ageSlider {
   margin: 20px auto;
   height: 5px;
 }
 
-#topbar .topBarBottom .wrap .changeRange #slider .noUi-handle {
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  right: 0;
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
-  outline: none;
-  cursor: pointer;
-  background: #eee;
-}
-
-#topbar .topBarBottom .wrap .changeRange #slider .noUi-handle::after {
-  display: none;
-}
-
-#topbar .topBarBottom .wrap .changeRange #slider .noUi-handle::before {
-  display: none;
-}
-
 #topbar .topBarBottom .wrap .changeRange .searchAgeRange {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 20px auto;
-  text-align: center;
 }
 
 #topbar .topBarBottom .wrap .interests {

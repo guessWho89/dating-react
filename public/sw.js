@@ -1,10 +1,11 @@
+/* eslint-disable array-callback-return */
 const cacheName = 'cache-v1.0';
 const cacheAssets = [
   'offline',
 ];
 
 // Call install event 
-self.addEventListener('install', (e) => {
+this.addEventListener('install', (e) => {
   console.log('[sw] installed');
   e.waitUntil(
     caches
@@ -13,12 +14,12 @@ self.addEventListener('install', (e) => {
         console.log('[sw] predefined files cached');
         cache.addAll(cacheAssets);
       })
-      .then(() => self.skipWaiting())
+      .then(() => this.skipWaiting())
   );
 });
 
 // Call activate event
-self.addEventListener('activate', (e) => {
+this.addEventListener('activate', (e) => {
   console.log('[sw] activated');
   // Remove unwanted caches
   e.waitUntil(
@@ -36,7 +37,7 @@ self.addEventListener('activate', (e) => {
 });
 
 
-addEventListener('fetch', (event) => {
+this.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
       .then((response) => {
@@ -49,13 +50,14 @@ addEventListener('fetch', (event) => {
               .then((cache) => {
                 // file types allowed in cache
                 const filesType = ['.js', '.css', '.jpg', '.png', '.ico', '.mp4', '.gif'];
-                filesType.map((type) => {
+                filesType.map(type => {
                   if (event.request.url.includes(type)) {
                     if (
                       // routes disallowed in cache
                       !event.request.url.includes('/coins') &&
                       !event.request.url.includes('/pricing') &&
-                      !event.request.url.includes('/201184asdqwe')
+                      !event.request.url.includes('/201184asdqwe') &&
+                      event.request.method !== 'POST'
                     ) {
                       cache.put(event.request.url, res.clone()); //save the response for future
                     }

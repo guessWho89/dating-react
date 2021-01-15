@@ -1,9 +1,9 @@
-#mob_topbar {
+#mobBar {
     display: none;
 }
 
 @media (max-width: 768px) {
-    #mob_topbar {
+    #mobBar {
         position: fixed;
         width: 100%;
         height: 60px;
@@ -17,6 +17,7 @@
         transition: 0.3s;
 
         .burger,
+        .burgerOpen,
         .more {
             font-size: 40px;
             color: #555;

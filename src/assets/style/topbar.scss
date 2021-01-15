@@ -7,7 +7,11 @@
     width: calc(100% - 60px);
     z-index: 2;
     display: flex;
-
+    justify-content: center;
+    .MuiButton-root {
+        padding: 8px 16px;
+        margin: auto 5px;
+    }
     >div {
         padding: 10px;
 
@@ -38,6 +42,14 @@
 
     .interesStatus {
         text-align: center;
+        .showInterests,
+        .hideInterests {
+            color: #999;
+            cursor: pointer;
+        }
+        .hideInterests {
+            display: none;
+        }
     }
 
     .searchBar {
@@ -68,33 +80,14 @@
                 padding: 20px;
                 display: none;
 
-                #slider {
+                .ageSlider {
                     margin: 20px auto;
                     height: 5px;
-
-                    .noUi-handle {
-                        height: 15px;
-                        width: 15px;
-                        border-radius: 50%;
-                        right: 0;
-                        transform: translateX(50%);
-                        outline: none;
-                        cursor: pointer;
-                        background: #eee;
-
-                        &::after {
-                            display: none;
-                        }
-
-                        &::before {
-                            display: none;
-                        }
-                    }
                 }
 
                 .searchAgeRange {
+                    display: flex;
                     margin: 20px auto;
-                    text-align: center;
                 }
             }
 

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url("../fonts/Nunito-Regular.ttf");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +10,7 @@
           box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
   font-display: swap;
+  outline: none;
 }
 
 * small {
@@ -41,6 +47,264 @@ body {
     overflow-y: auto;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+  }
+}
+
+#loader {
+  opacity: 1;
+  background: #eee;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 4;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#loader .spinner {
+  border: 10px solid #fcfcfc;
+  border-radius: 50%;
+  border-top: 10px solid #f44336;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+#mobBar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #mobBar {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 10px;
+    background: #eee;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  #mobBar .burger,
+  #mobBar .burgerOpen,
+  #mobBar .more {
+    font-size: 40px;
+    color: #555;
+  }
+}
+
+#topbar {
+  background: #eee;
+  padding: 10px;
+  position: fixed;
+  left: 60px;
+  top: 0px;
+  width: calc(100% - 60px);
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#topbar .MuiButton-root {
+  padding: 8px 16px;
+  margin: auto 5px;
+}
+
+#topbar > div {
+  padding: 10px;
+}
+
+#topbar > div .filterName {
+  font-weight: bold;
+  font-size: 18px;
+  color: #999;
+  display: block;
+  margin-bottom: 10px;
+}
+
+#topbar .onlineStatus {
+  text-align: center;
+}
+
+#topbar .ageFilter {
+  text-align: center;
+}
+
+#topbar .ageFilter .ageRange p {
+  cursor: pointer;
+  font-size: 14px;
+  color: #999;
+}
+
+#topbar .interesStatus {
+  text-align: center;
+}
+
+#topbar .interesStatus .showInterests,
+#topbar .interesStatus .hideInterests {
+  color: #999;
+  cursor: pointer;
+}
+
+#topbar .interesStatus .hideInterests {
+  display: none;
+}
+
+#topbar .searchBar {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#topbar .searchBar input {
+  width: 200px;
+  margin: auto 10px;
+}
+
+#topbar .topBarBottom {
+  background: #ddd;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  padding: 0;
+}
+
+#topbar .topBarBottom .wrap {
+  max-width: 1000px;
+  margin: auto;
+}
+
+#topbar .topBarBottom .wrap .changeRange {
+  padding: 20px;
+  display: none;
+}
+
+#topbar .topBarBottom .wrap .changeRange .ageSlider {
+  margin: 20px auto;
+  height: 5px;
+}
+
+#topbar .topBarBottom .wrap .changeRange .searchAgeRange {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px auto;
+}
+
+#topbar .topBarBottom .wrap .interests {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+#topbar .topBarBottom .wrap .interests .tags .interesTag {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #999;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: 5px;
+}
+
+#topbar .topBarBottom .wrap .interests .buttons {
+  margin: 20px auto;
+}
+
+#topbar .topBarBottom .wrap .interests .buttons .decline {
+  background: transparent;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  #topbar {
+    left: 0;
+    top: 60px;
+    width: 100%;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    border-bottom: 1px solid #ccc;
   }
 }
 
@@ -127,7 +391,7 @@ body {
 
 #profiles {
   position: absolute;
-  padding: 0px 10px 28px;
+  padding: 0px 10px 0px;
   margin-top: 10px;
   width: calc(100% - 60px);
   left: 60px;
@@ -208,6 +472,10 @@ body {
           box-shadow: 0 0 0 3px #fff;
 }
 
+#profiles .profile .online::before {
+  border: 2px solid lime;
+}
+
 #profiles .profile::after {
   content: '';
   position: absolute;
@@ -274,5 +542,23 @@ body {
     -webkit-column-count: 1;
             column-count: 1;
   }
+}
+
+#footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  background: #eee;
+  border: 1px solid #ccc;
+  z-index: 2;
+}
+
+#footer small {
+  text-align: center;
+  color: #555;
+  display: block;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */
